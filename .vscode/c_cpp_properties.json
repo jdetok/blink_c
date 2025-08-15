@@ -1,12 +1,3 @@
-# commands to install avr
-`
-brew install avrdude
-brew tap osx-cross/avr
-brew install avr-gcc
-`
-# make c_cpp_properties file for vscode
-- necessary so it recognizes the atmega register names etc
-```json
 {
     "configurations": [
         {
@@ -27,4 +18,3 @@ brew install avr-gcc
     ],
     "version": 4
 }
-```
