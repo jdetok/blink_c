@@ -11,16 +11,15 @@ const int delayTime = 500;
 
 int main() {
 
-    DDRB |= p13;
-    DDRB |= p12;
-    DDRB |= p11;
+    for (int i=0; i < sizeof(pins); i++) {
+        DDRB |= pins[i];    
+    }
 
     while (1) {
-        PORTB ^= p13;
-        _delay_ms(delayTime);
-        PORTB ^= p12;
-        _delay_ms(delayTime);
-        PORTB ^= p11;
-        _delay_ms(delayTime);
+        for (int i=0; i < sizeof(pins); i++) {
+            PORTB ^= pins[i];
+            _delay_ms(delayTime);
+            PORTB ^= pins[i];
+        }
     }
 }
