@@ -9,7 +9,7 @@ CHIP=atmega328p
 avr-gcc -mmcu=$CHIP -Os -DF_CPU=16000000UL -c -o bld/main.o src/main.c
 
 # executable
-avr-gcc -mmcu=$CHIP bld/main.o -o bin/main
+avr-gcc -mmcu=$CHIP bld/main.o -o bin/main 
 
 # hex
 avr-objcopy -O  ihex -R .eeprom bin/main hex/main.hex
